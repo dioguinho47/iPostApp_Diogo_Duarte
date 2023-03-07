@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: rgb(183, 182, 182);
+}
+
+.wrapper{
+    background-color: white;
+    border-radius: 15px;
+    max-width: 475px;
+    width: 100%;
+    padding: 50px 25px 15px 40px;
+}
+
+.input-box{
+    border-bottom: 1px solid #e6e6e6;
+    padding-top: 10px;
+}
+
+.post-box .post-area{
+    position: relative;
+    min-height: 130px;
+}
+
+.post-area .placeholder{
+    position: absolute;
+    margin-top: -3px;
+    font-size: 22px;
+    color: #ba0000;
+    pointer-events: none;
+}
+
+.post-area .input{
+    outline: none;
+    font-size: 20px;
+    word-wrap: break-word;
+}
+
+.post-area .readonly{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.post-box .privacy{
+    color: #000000;
+    margin: 15px 0;
+    padding: 7px 10px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 50px;
+    transition: background 0.2s ease;
+}
+
+.post-box .privacy:hover, .icons li:hover{
+    background: #f5f5f5;
+}
+
+.privacy i{
+    font-size: 18px;
+}
+
+.privacy span{
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 7px;
+}
+
+.bottom{
+    display: flex;
+    margin-top: 13px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bottom .icons{
+    display: inline-flex;
+}
+
+.icons li{
+    list-style: none;
+    height: 38px;
+    width: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 30%;
+}
+
+.bottom .content{
+    display: flex;
+    align-items: center;
+}
+
+.content button{
+    padding: 9px 18px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #b11818;
+    color: white;
+    cursor: pointer;
+}
+
+.content button:hover{
+    opacity: 0.7;
+    transition: 0.5s ease-in;
+}

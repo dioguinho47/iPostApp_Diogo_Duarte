@@ -1,0 +1,22 @@
+{
+  "name": "ipostapp_diogo_duarte",
+  "version": "1.0.0",
+  "description": "My iPost application - MM207",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dioguinho47/iPostApp.git"
+  },
+  "author": "Diogo Duarte",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dioguinho47/iPostApp/issues"
+  },
+  "homepage": "https://github.com/dioguinho47/iPostApp#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
