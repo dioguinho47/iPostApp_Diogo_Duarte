@@ -3,7 +3,7 @@ import GeneralView from "./GeneralView.js";
 export default class extends GeneralView {
     constructor(){
         super();
-        this.setTitle("Posts");
+        this.setTitle("ViewPosts");
     }
 
     async getHtml() {
@@ -14,8 +14,29 @@ export default class extends GeneralView {
         <br>
         <br>
         <br>
-        <h1> View your posts </h1>
-        <p> Text </p>
+        <div class="wrapper2">
+            <div class="post-box">
+                <div class="post-area">
+                    <h1>This is a post</h1>
+                    <div class="input readonly" contenteditable="true" spellcheck="false"></div>
+                </div>
+                <div class="privacy">
+                    <i class="fa-sharp fa-solid fa-reply"></i>                
+                    <span>Reply</span>         
+                </div>
+            </div>
+            <div class="bottom">
+                <ul class="icons">
+                    <li><i class="fa-regular fa-heart"></i></li>
+                    <li><i class="fa-regular fa-face-smile"></i></li>
+                    <li><i class="fa-regular fa-face-sad-tear"></i></li>
+                </ul>
+                <div class="content">
+                    
+                </div>
+
+            </div>
+        </div>
         `;
     }
 }

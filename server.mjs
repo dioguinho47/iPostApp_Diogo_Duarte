@@ -16,19 +16,23 @@ server.get('/*', (req, res) => {
 });
 
 //Endpoints for the posts
-server.get('/api/posts', (req, res) => {
+server.post('/api/posts', (req, res) => {
 
 });
 
-server.get('/api/posts/id', (req, res) => {
+server.get('/api/posts/', (req, res) => {
 
 });
 
-server.put('/api/posts/id/react/', (req, res) => {
+server.get('/api/posts/<id>/', (req, res) => {
 
 });
 
-server.delete('/api/posts/id', (req, res) => {
+server.put('/api/posts/<id>/react/', (req, res) => {
+
+});
+
+server.delete('/api/posts/<id>/', (req, res) => {
 
 });
 
@@ -39,7 +43,7 @@ server.delete('/api/posts/<id>/react/', (req, res) => {
 //If the user tries to visit a page in our application that doesnt exist, an error(404) will display
 server.use((req, res) => {
     res.status(404);
-    res.send('<h1> Error 404: Resource not found... </h1>');
+    res.send('<h1> Error 404: The Route or Resource you are looking for could not be found... </h1>');
 }); 
 
 server.listen(server.get('port'), function() {

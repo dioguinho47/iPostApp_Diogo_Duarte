@@ -3,7 +3,7 @@ import GeneralView from "./GeneralView.js";
 export default class extends GeneralView {
     constructor(){
         super();
-        this.setTitle("Homepage");
+        this.setTitle("Posts");
     }
 
     async getHtml() {
