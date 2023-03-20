@@ -27,16 +27,19 @@
         </label>
         
         <ul>
-            <li><a href="/" data-link> Share a Post </a></li>
-            <li><a href="/viewposts" data-link> View your Posts </a></li>
-            <li><a href="/register&login" data-link> Login/Register </a></li>
+            <li><a href="/" data-translate="navTitle1" data-link> Share a Post </a></li>
+            <li><a href="/viewposts" data-translate="navTitle2" data-link> View your Posts </a></li>
+            <li><a href="/register&login" data-translate="navTitle3" data-link> Login/Register </a></li>
+            <button id="translateBtn" data-translate="translateBtn"></button>
+            <!---  
             <div class="dropdown">
                 <button class="dropbtn">Translate</button>
                 <div class="dropdown-content">
-                    <a href="#">English</a>
-                    <a href="#">Norwegian</a>
+                    <a href="#">English(EN)</a>
+                    <a href="#">Português(PT)</a>
                 </div>
             </div>
+            --->
         </ul>
     </nav>
 
@@ -49,12 +52,12 @@
         </div>
 
         <div class="footer-bottom">
-            <p> Copyright &copy; 2023 iPost. <h4> developed by Diogo Duarte and Tech Suppot</h4></p>
+            <p> Copyright &copy; 2023 iPost. <h4> developed by Diogo Duarte aka new Tech Suppot</h4></p>
         </div>
 
     </footer>
 
-    <script type="module" src="/static/js/index.js"></script>
+    <script src="/static/js/index.js" type="module"></script>
 
 </body>
 </html>

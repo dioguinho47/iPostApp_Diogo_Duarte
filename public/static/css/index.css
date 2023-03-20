@@ -224,6 +224,26 @@ footer {
     transition: 0.8s;
 }
 
+/*Tranlate button UPDATED */
+
+#translateBtn{
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 30px;
+    border: 2px solid white;
+    background-color: white;
+    color: rgb(129, 1, 1);
+    cursor: pointer;
+}
+
+#translateBtn:hover{
+    background-color: rgba(128, 128, 128, 0.592);
+    transition: 1s ease-in;    
+    cursor: pointer;
+    border: 2px solid white;
+    color: white;
+}
+
 /* Translate dropdown button */
 
 .dropbtn{
@@ -552,7 +572,6 @@ footer {
     background-color: white;
     color: rgb(129, 1, 1);
 }
-
 
 .regBtn button:hover {
     background-color: rgba(128, 128, 128, 0.592);

@@ -16,26 +16,33 @@ server.get('/*', (req, res) => {
 });
 
 //Endpoints for the posts
-server.post('/api/posts', (req, res) => {
+
+//Creates a new post
+server.post('/api/posts/', (req, res) => {
 
 });
 
+//Gets multiple posts to present to the user
 server.get('/api/posts/', (req, res) => {
 
 });
 
+//Gets a specific post to present to the user by looking up the 'ID' parameter
 server.get('/api/posts/<id>/', (req, res) => {
 
 });
 
+//Adds a reaction to a specific post by looking up the 'ID' parameter
 server.put('/api/posts/<id>/react/', (req, res) => {
 
 });
 
+//Deletes a specific post by looking up the 'ID' parameter
 server.delete('/api/posts/<id>/', (req, res) => {
 
 });
 
+//Removes a specific reaction from a specific post with an ID
 server.delete('/api/posts/<id>/react/', (req, res) => {
 
 });

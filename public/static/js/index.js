@@ -1,7 +1,40 @@
 import Homepage from "./myViews/Homepage.js";
 import Posts from "./myViews/ViewPosts.js";
 import Register from "./myViews/Register.js";
+import translation  from './translation.mjs';
 
+//Translation in my application
+let definedLanguage = "en";
+let myTranslations = translation[definedLanguage];
+
+const translateBtn = document.getElementById("translateBtn");
+
+translateBtn.onclick = function(evt) {
+    translateLang();
+}
+
+function translateLang(){
+    if (definedLanguage === "en"){
+        definedLanguage = "pt"
+    } else {
+        definedLanguage = "en"
+    }
+
+    myTranslations = translation[definedLanguage];
+    translatedUI();
+}
+
+function translatedUI(){
+    const uiElements = document.querySelectorAll("[data-translate]");
+
+    for (const element of uiElements) {
+        const translationKey = element.getAttribute("data-translate")
+        element.innerText = myTranslations[translationKey];
+    }
+}
+
+
+//Application navigation
 const applicationNavigation = myUrl => {
     history.pushState(null, null, myUrl);
     myRouter();
@@ -33,7 +66,7 @@ const myRouter = async function() {
 
     const myView = new Match.route.view();
 
-    //Content for each route will be stored in the 'id = myApp' div container
+    //Content for each route will be stored in the 'id = ApplicationContent' div container
     document.querySelector("#ApplicationContent").innerHTML = await myView.getHtml();
 };
 
@@ -48,3 +81,5 @@ document.addEventListener("DOMContentLoaded", function() {
     })  
     myRouter();
 });
+
+translatedUI();
