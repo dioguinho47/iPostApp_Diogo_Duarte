@@ -1,6 +1,6 @@
-import GeneralView from "./GeneralView.js";
+import MainView from "./MainView.js";
 
-export default class extends GeneralView {
+export default class extends MainView {
     constructor(){
         super();
         this.setTitle("Register&Login");
@@ -9,7 +9,7 @@ export default class extends GeneralView {
     async getHtml() {
         return `
             <div class="registration-container">
-                    <h1 id="regH1"> Don´t have an account? Register here </h1>
+                    <h1 id="regH1" data-translate="regTitle"> Don´t have an account? Register here </h1>
                     <form id="RegForm" action="#" method="post">
                         <div class="data">
                             <label for="name">Name: </label>

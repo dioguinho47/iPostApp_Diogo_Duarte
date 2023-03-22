@@ -1,7 +1,7 @@
 import Homepage from "./myViews/Homepage.js";
 import Posts from "./myViews/ViewPosts.js";
 import Register from "./myViews/Register.js";
-import translation  from './translation.mjs';
+import translation  from './Translation/translation.js';
 
 //Translation in my application
 let definedLanguage = "en";
@@ -32,7 +32,6 @@ function translatedUI(){
         element.innerText = myTranslations[translationKey];
     }
 }
-
 
 //Application navigation
 const applicationNavigation = myUrl => {

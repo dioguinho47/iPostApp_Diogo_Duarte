@@ -1,6 +1,6 @@
-import GeneralView from "./GeneralView.js";
+import MainView from "./MainView.js";
 
-export default class extends GeneralView {
+export default class extends MainView {
     constructor(){
         super();
         this.setTitle("ViewPosts");

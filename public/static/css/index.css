@@ -195,7 +195,7 @@ footer {
 
 .footer-bottom{
     background-color: rgb(28, 28, 29);
-    padding: 20px 0;
+    padding: 10px 0;
     font-family: Roboto;
     text-align: center;
     display: flex;
@@ -219,7 +219,7 @@ footer {
 }
 
 .footer-bottom h4:hover{
-    color: rgb(254, 121, 121);
+    color: rgb(255, 170, 170);
     cursor: pointer;
     transition: 0.8s;
 }
@@ -386,7 +386,8 @@ footer {
     margin: 0 2px;
     font-size: 20px;
     cursor: pointer;
-    border-radius: 30%;
+    border-radius: 30px;
+    color: #b11818;
 }
 
 .bottom .content{
@@ -535,7 +536,7 @@ footer {
 /* Register view */
 
 .registration-container {
-    padding-top: 180px;
+    padding-top: 135px;
     align-content: center;
     align-items: center;
     text-align: center;
