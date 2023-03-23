@@ -1,7 +1,7 @@
 {
     "userID":"",
     "messageID":"",       
-    "postedMessage":"Hello this is a post", 
+    "postedMessage":"", 
     "Reactions": [
       { "userID": "", "reaction": "heart" },
       { "userID": "", "reaction": "smile_face" },

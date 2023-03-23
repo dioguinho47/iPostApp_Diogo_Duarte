@@ -18,7 +18,7 @@ export default class extends MainView {
             <div class="post-box">
                 <div class="post-area">
                     <span></span>
-                    <div class="input editable" contenteditable="true" spellcheck="false"></div>
+                    <div class="input editable" contenteditable="true" spellcheck="false">Type you post here</div>
                     <div class="input readonly" contenteditable="true" spellcheck="false"></div>
                 </div>
                 
