@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap');
 
 body{
     align-items: center;
@@ -331,12 +334,7 @@ footer {
     outline: none;
     font-size: 20px;
     word-wrap: break-word;
-}
-
-.post-area .readonly{
-    position: absolute;
-    top: 0;
-    left: 0;
+    color:#000000;
 }
 
 .post-box .privacy{
@@ -415,10 +413,10 @@ footer {
 
 /* Posted post template */
 
-
 .wrapper2{
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 100px;
+    margin-bottom: 100px;
     background-color: white;
     border-radius: 15px;
     max-width: 475px;
@@ -426,6 +424,15 @@ footer {
     padding: 50px 25px 15px 40px;
     align-items: center;
     align-content: center;
+}
+
+#useridTxt{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: rgba(9, 47, 217, 0.724);
+    text-align: center;
+    padding-right: 30px;
+    text-decoration: underline;
 }
 
 .input-box{
@@ -452,11 +459,8 @@ footer {
     word-wrap: break-word;
 }
 
-.post-area .readonly{
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+#postedMessage{
+    padding-top: 30px;
 }
 
 .post-box .privacy{
@@ -535,7 +539,7 @@ footer {
 /* Register view */
 
 .registration-container {
-    padding-top: 135px;
+    padding-top: 200px;
     align-content: center;
     align-items: center;
     text-align: center;

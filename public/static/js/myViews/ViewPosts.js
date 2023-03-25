@@ -36,7 +36,7 @@ class SinglePostView {
         this.postedMessage = container.querySelector("#postedMessage");
         this.postedMessage.innerText = post.postedmessage;
         this.useridTxt = container.querySelector("#useridTxt");
-        this.useridTxt.innerText = post.userid;
+        this.useridTxt.innerText = "USER ID " + " " + post.userid;
         
     }
 
@@ -46,7 +46,6 @@ class SinglePostView {
             <div class="post-box">
                 <div class="post-area">
                     <h3 id="useridTxt"></h3>
-                    <div class="input readonly" contenteditable="true" spellcheck="false"></div>
                     <h1 id="postedMessage"></h1>
                 </div>
                 <div class="privacy">

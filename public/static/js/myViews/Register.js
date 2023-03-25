@@ -12,12 +12,8 @@ export default class extends MainView {
                     <h1 id="regH1" data-translate="regTitle"> Don´t have an account? Register here </h1>
                     <form id="RegForm" action="#" method="post">
                         <div class="data">
-                            <label for="name">Name: </label>
+                            <label for="name">Username: </label>
                             <input type="text" name="name" id="name" />
-                        </div>
-                        <div class="data">
-                            <label for="email">Email: </label>
-                            <input type="email" name="email" id="email" />
                         </div>
                         <div class="data">
                             <label for="password">Password: </label>
@@ -32,8 +28,8 @@ export default class extends MainView {
                 <h1 id="logH1"> Login </h1>
                     <form id="LoginForm" action="#" method="post">
                         <div class="data2">
-                            <label for="email">Email: </label>
-                            <input type="email" name="email" id="email2" />
+                            <label for="name">Username: </label>
+                            <input type="name" name="name" id="name2" />
                         </div>
                         <div class="data2">
                             <label for="password">Password: </label>

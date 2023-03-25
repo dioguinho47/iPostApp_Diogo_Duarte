@@ -17,22 +17,23 @@ export default class extends MainView {
         <div class="wrapper">
             <div class="post-box">
                 <div class="post-area">
-                    <span></span>
-                    <div class="input editable" contenteditable="true" spellcheck="false" id="messageDiv">Type you post here</div>
-                    <div class="input readonly" contenteditable="true" spellcheck="false"></div>
+                    <div class="input editable" contenteditable="true" spellcheck="false" id="messageDiv">Type your post here...</div>
                 </div>
                 
             </div>
             <div class="bottom">
                 <ul class="icons">
-                    <li><i class="fa-regular fa-image"></i></li>
-                    <li><i class="fa-regular fa-face-smile"></i></li>
+                    <li id="heart"><i class="fa-regular fa-heart"></i></li>
+                    <li id="smileyFace"><i class="fa-regular fa-face-smile"></i></li>
                 </ul>
                 <div class="content">
                     <button id="postBtn">Post</button>           
                 </div>
             </div>
         </div>
+        <div class="info-Container"> 
+        </div>
+
         `;
     }
 
@@ -40,6 +41,8 @@ export default class extends MainView {
         //Does nothing by default
         let postBtn = container.querySelector("#postBtn");
         let messageDiv = container.querySelector("#messageDiv");
+        let smileyFace = container.querySelector("#smileyFace");
+        let heart = container.querySelector("#heart");
 
         postBtn.addEventListener("click", async function(evt){
 
@@ -55,6 +58,18 @@ export default class extends MainView {
                   message: currentPostText
                 })
             });
+
+        });
+
+        smileyFace.addEventListener("click", async function(evt){
+            
+            messageDiv.innerText = "😁";
+
+        });
+
+        heart.addEventListener("click", async function(evt){
+            
+            messageDiv.innerText = "❤️";
 
         });
     }

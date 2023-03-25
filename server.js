@@ -73,7 +73,7 @@ server.use((req, res, next) => {
 
 });
 
-//API ENDPOINTS
+//API POST ENDPOINTS
 //Creates a new post
 server.post('/api/posts/', (req, res) => {
 
@@ -105,7 +105,7 @@ server.post('/api/posts/', (req, res) => {
 //Gets multiple posts to present to the user
 server.get('/api/posts/', (req, res) => {
 
-    client.query('SELECT * FROM posts ORDER BY messageid DESC LIMIT 50', (error, response) =>{
+    client.query('SELECT * FROM posts ORDER BY messageid DESC LIMIT 10', (error, response) =>{
 
         if(error !== null){
             res.statusCode = 500;
@@ -139,6 +139,18 @@ server.delete('/api/posts/<id>/', (req, res) => {
 
 //Removes a specific reaction from a specific post with an ID
 server.delete('/api/posts/<id>/react/', (req, res) => {
+
+});
+
+//API LOGIN / REGISTRATION ENDPOINTS
+
+//Login form
+server.post('/api/login/', (req, res) => {
+
+});
+
+//Registration form
+server.post('/api/register', (req, res) => {
 
 });
 

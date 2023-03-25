@@ -61,7 +61,6 @@ const myRouter = async function() {
     if (!Match) {
         Match = {
             route: myRoutes[404],
-            isMatch: true
         };
     }
 
