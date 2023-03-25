@@ -10,4 +10,11 @@ export default class {
     async getHtml() {
         return "";
     }
+    
+    async onBegin(container) {
+        //Does nothing by default
+    }
+    async onEnd(container) {
+        //Does nothing by default
+    }
 }

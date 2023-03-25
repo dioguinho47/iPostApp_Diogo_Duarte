@@ -6,19 +6,48 @@ export default class extends MainView {
         this.setTitle("ViewPosts");
     }
 
-    async getHtml() {
+    async onBegin(container) {
+        //Does nothing by default
+    
+        const res = await fetch("/api/posts", {
+            method: "GET",
+            headers: {
+              "Authorization": "Bearer 1 super_password"
+            }
+        });
+
+        let posts = await res.json();
+        console.log(posts);
+
+        for(let i = 0; i < posts.length; i++){
+
+            let currentPost = posts[i];
+            let div = document.createElement("div");
+            let postView = new SinglePostView(currentPost, div);
+            container.appendChild(div);
+        }
+    }
+}
+
+class SinglePostView {
+    constructor(post, container){
+
+        container.innerHTML = this.getHtml();
+        this.postedMessage = container.querySelector("#postedMessage");
+        this.postedMessage.innerText = post.postedmessage;
+        this.useridTxt = container.querySelector("#useridTxt");
+        this.useridTxt.innerText = post.userid;
+        
+    }
+
+    getHtml() {
         return `
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <div class="wrapper2">
             <div class="post-box">
                 <div class="post-area">
-                    <h1>This is a post</h1>
+                    <h3 id="useridTxt"></h3>
                     <div class="input readonly" contenteditable="true" spellcheck="false"></div>
+                    <h1 id="postedMessage"></h1>
                 </div>
                 <div class="privacy">
                     <i class="fa-sharp fa-solid fa-reply"></i>                
@@ -31,10 +60,6 @@ export default class extends MainView {
                     <li><i class="fa-regular fa-face-smile"></i></li>
                     <li><i class="fa-regular fa-face-sad-tear"></i></li>
                 </ul>
-                <div class="content">
-                    
-                </div>
-
             </div>
         </div>
         `;

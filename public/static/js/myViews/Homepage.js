@@ -18,7 +18,7 @@ export default class extends MainView {
             <div class="post-box">
                 <div class="post-area">
                     <span></span>
-                    <div class="input editable" contenteditable="true" spellcheck="false">Type you post here</div>
+                    <div class="input editable" contenteditable="true" spellcheck="false" id="messageDiv">Type you post here</div>
                     <div class="input readonly" contenteditable="true" spellcheck="false"></div>
                 </div>
                 
@@ -29,10 +29,35 @@ export default class extends MainView {
                     <li><i class="fa-regular fa-face-smile"></i></li>
                 </ul>
                 <div class="content">
-                    <button>Post</button>           
+                    <button id="postBtn">Post</button>           
                 </div>
             </div>
         </div>
         `;
     }
+
+    async onBegin(container) {
+        //Does nothing by default
+        let postBtn = container.querySelector("#postBtn");
+        let messageDiv = container.querySelector("#messageDiv");
+
+        postBtn.addEventListener("click", async function(evt){
+
+            let currentPostText = messageDiv.innerText;
+
+            const res = await fetch("/api/posts", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  "Authorization": "Bearer 1 super_password"
+                },
+                body: JSON.stringify({
+                  message: currentPostText
+                })
+            });
+
+        });
+    }
+
+
 }

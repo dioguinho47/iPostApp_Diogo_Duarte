@@ -39,6 +39,8 @@ const applicationNavigation = myUrl => {
     myRouter();
 }
 
+let currentView = null;
+
 //Routes for my application
 const myRouter = async function() {
     const myRoutes = [
@@ -66,7 +68,13 @@ const myRouter = async function() {
     const myView = new Match.route.view();
 
     //Content for each route will be stored in the 'id = ApplicationContent' div container
-    document.querySelector("#ApplicationContent").innerHTML = await myView.getHtml();
+    const container = document.querySelector("#ApplicationContent");
+    if (currentView !== null) {
+        await currentView.onEnd(container);
+    }
+    container.innerHTML = await myView.getHtml();
+    currentView = myView;
+    await myView.onBegin(container);
 };
 
 window.addEventListener("popstate", myRouter);

@@ -337,7 +337,6 @@ footer {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
 }
 
 .post-box .privacy{
@@ -634,6 +633,10 @@ footer {
     background-color: rgba(128, 128, 128, 0.592);
     transition: 1s ease-in;
 }
+
+#ApplicationContent {
+    overflow-y: auto;
+  }
 
 
 

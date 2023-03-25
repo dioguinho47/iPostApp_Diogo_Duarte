@@ -14,7 +14,7 @@ server.use("/static", express.static(path.resolve(__dirname, "public", "static")
 server.use((req, res, next) => {
     console.log(`Middleware launched under ${req.method} ${req.url}`);
 
-    req.user = null;
+    res.locals.user = null;
     let authHeader = req.headers["authorization"];
     console.log(`Authorization header: ${authHeader}`);
 
@@ -64,7 +64,7 @@ server.use((req, res, next) => {
         console.log(response);
         console.log(response.rows);
 
-        req.user = response.rows[0];
+        res.locals.user = response.rows[0];
         console.log("Tagged request");
 
         next();
@@ -78,18 +78,47 @@ server.use((req, res, next) => {
 server.post('/api/posts/', (req, res) => {
 
     const body = req.body;
-    const postedMessage = body.message;
-    let userID = req.user.userID;
+    const postedmessage = body.message;
+    let userID = res.locals.user.userid;
+    let timeposted = new Date();
+
+    client.query('INSERT INTO posts (userid, postedmessage, timeposted) VALUES ($1, $2, $3)', [userID, postedmessage, timeposted], (error, response) =>{
+
+        if(error !== null){
+            res.statusCode = 500;
+            res.end();
+            console.log(error);
+
+            return;
+        }
+
+        //console.log(response);
+        console.log(userID);
+        console.log(postedmessage);
+
+        res.end();
+
+    });
 
 });
 
 //Gets multiple posts to present to the user
 server.get('/api/posts/', (req, res) => {
-    
-    console.log(`Endpoint launched under ${req.method} ${req.url}`);
-    console.log(req.user);
-    res.statusCode = req.user !== null ? 200 : 418;
-    res.end("req.user is" + JSON.stringify(req.user));
+
+    client.query('SELECT * FROM posts ORDER BY messageid DESC LIMIT 50', (error, response) =>{
+
+        if(error !== null){
+            res.statusCode = 500;
+            res.end();
+            console.log(error);
+
+            return;
+        }
+
+        res.json(response.rows);
+      
+    });
+
 
 });
 
