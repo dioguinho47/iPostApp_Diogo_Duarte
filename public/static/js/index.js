@@ -1,6 +1,7 @@
 import Homepage from "./myViews/Homepage.js";
 import Posts from "./myViews/ViewPosts.js";
 import Register from "./myViews/Register.js";
+import Login from "./myViews/Login.js"
 import translation  from './Translation/translation.js';
 
 //Translation in my application
@@ -9,9 +10,11 @@ let myTranslations = translation[definedLanguage];
 
 const translateBtn = document.getElementById("translateBtn");
 
-translateBtn.onclick = function(evt) {
+translateBtn.addEventListener("click", function(evt){
+
     translateLang();
-}
+
+});
 
 function translateLang(){
     if (definedLanguage === "en"){
@@ -21,10 +24,10 @@ function translateLang(){
     }
 
     myTranslations = translation[definedLanguage];
-    translatedUI();
+    translatedInterface();
 }
 
-function translatedUI(){
+function translatedInterface(){
     const uiElements = document.querySelectorAll("[data-translate]");
 
     for (const element of uiElements) {
@@ -46,7 +49,8 @@ const myRouter = async function() {
     const myRoutes = [
         {path: "/", view: Homepage},
         {path: "/viewposts", view: Posts},
-       {path: "/register&login", view: Register}
+       {path: "/register", view: Register},
+       {path: "/login", view: Login}
     ];
 
     const routePath = myRoutes.map(route => {
@@ -59,9 +63,7 @@ const myRouter = async function() {
     let Match = routePath.find(potentialMatch => potentialMatch.isMatch);
 
     if (!Match) {
-        Match = {
-            route: myRoutes[404],
-        };
+       myRoutes(404);
     }
 
     const myView = new Match.route.view();
@@ -88,4 +90,4 @@ document.addEventListener("DOMContentLoaded", function() {
     myRouter();
 });
 
-translatedUI();
+translatedInterface();

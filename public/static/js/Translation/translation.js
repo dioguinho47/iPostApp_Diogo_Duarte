@@ -5,7 +5,13 @@ export default {
         navTitle3: "Login/Register",
         translateBtn: "PT",
         footerTxt: "iPost Application",
-        regTitle: "Don´t have an account? Register her"
+        regTitle: "Don´t have an account? Register her",
+        footerCopyRight: "Developed by Diogo Duarte",
+        copyRight: "Copyright © 2023 iPost.",
+        userTrslt: "Username:",
+        pwTrslt: "Password:",
+        regBtnTrslt: "Register",
+        loginTxtTrslt: "Already have an account? Login here"
     },
     pt: {
         navTitle1: "Partilhar um post",
@@ -13,6 +19,15 @@ export default {
         navTitle3: "Conecte-se/Registre-se",
         translateBtn: "EN",
         footerTxt: "Aplicação iPost",
-        regTitle: "Não tem uma conta? Registre-se aqui"
+        regTitle: "Não tem uma conta? Registre-se aqui",
+        footerCopyRight: "Desenvolvido por Diogo Duarte",
+        copyRight: "Direito Autoral © 2023 iPost.",
+        userTrslt: "Nome de usuário:",
+        pwTrslt: "Palavra-passe:",
+        regBtnTrslt: "Registrar",
+        loginTxtTrslt: "Já tem uma conta? Faça o login aqui"
+
+
+
     }
 }

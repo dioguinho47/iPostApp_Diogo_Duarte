@@ -105,7 +105,7 @@ server.post('/api/posts/', (req, res) => {
 //Gets multiple posts to present to the user
 server.get('/api/posts/', (req, res) => {
 
-    client.query('SELECT * FROM posts ORDER BY messageid DESC LIMIT 10', (error, response) =>{
+    client.query('SELECT * FROM posts ORDER BY messageid DESC LIMIT 10', (error, response) => {
 
         if(error !== null){
             res.statusCode = 500;
@@ -133,7 +133,22 @@ server.put('/api/posts/<id>/react/', (req, res) => {
 });
 
 //Deletes a specific post by looking up the 'ID' parameter
-server.delete('/api/posts/<id>/', (req, res) => {
+server.delete('/api/posts/:id', (req, res) => {
+
+    const id_to_delete = req.params.id;
+
+    client.query('DELETE FROM posts WHERE messageid= $1', [id_to_delete], (error, response) => {
+
+        if(error !== null){
+            res.statusCode = 500;
+            res.end();
+            console.log(error);
+            return;
+        }
+
+        res.end();
+
+    });
 
 });
 

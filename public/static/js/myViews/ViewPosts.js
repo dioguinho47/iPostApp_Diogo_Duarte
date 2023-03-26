@@ -25,6 +25,7 @@ export default class extends MainView {
             let div = document.createElement("div");
             let postView = new SinglePostView(currentPost, div);
             container.appendChild(div);
+
         }
     }
 }
@@ -36,8 +37,21 @@ class SinglePostView {
         this.postedMessage = container.querySelector("#postedMessage");
         this.postedMessage.innerText = post.postedmessage;
         this.useridTxt = container.querySelector("#useridTxt");
-        this.useridTxt.innerText = "USER ID " + " " + post.userid;
-        
+        this.useridTxt.innerText = "USER ID:" + " " + post.userid;
+        this.deleteBtn = container.querySelector("#deleteBtn");
+
+        this.deleteBtn.addEventListener("click", async () => {
+
+            const res = await fetch("/api/posts/" + post.messageid, {
+                method: "DELETE",
+                headers: {
+                  "Authorization": "Bearer 1 super_password"
+                }
+            });
+
+            location.reload();
+
+        });
     }
 
     getHtml() {
@@ -59,6 +73,9 @@ class SinglePostView {
                     <li><i class="fa-regular fa-face-smile"></i></li>
                     <li><i class="fa-regular fa-face-sad-tear"></i></li>
                 </ul>
+                <div class="content">
+                    <button id="deleteBtn">Delete</button>           
+                </div>
             </div>
         </div>
         `;

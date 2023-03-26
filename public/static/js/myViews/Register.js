@@ -3,7 +3,7 @@ import MainView from "./MainView.js";
 export default class extends MainView {
     constructor(){
         super();
-        this.setTitle("Register&Login");
+        this.setTitle("Register");
     }
 
     async getHtml() {
@@ -12,35 +12,40 @@ export default class extends MainView {
                     <h1 id="regH1" data-translate="regTitle"> Don´t have an account? Register here </h1>
                     <form id="RegForm" action="#" method="post">
                         <div class="data">
-                            <label for="name">Username: </label>
+                            <label for="name" data-translate="userTrslt">Username: </label>
                             <input type="text" name="name" id="name" />
                         </div>
                         <div class="data">
-                            <label for="password">Password: </label>
+                            <label for="email">Email: </label>
+                            <input type="email" name="email" id="email" />
+                        </div>
+                        <div class="data">
+                            <label for="password" data-translate="pwTrslt">Password: </label>
                             <input type="password" name="password" id="password" />
                         </div>
                         <div class="regBtn">
-                            <button type="submit">Register</button>
+                            <button type="submit" data-translate="regBtnTrslt">Register</button>
                         </div>
                     </form>
             </div>
-            <div class="login-container">
-                <h1 id="logH1"> Login </h1>
-                    <form id="LoginForm" action="#" method="post">
-                        <div class="data2">
-                            <label for="name">Username: </label>
-                            <input type="name" name="name" id="name2" />
-                        </div>
-                        <div class="data2">
-                            <label for="password">Password: </label>
-                            <input type="password" name="password" id="password2" />
-                        </div>
-                        <div class="logBtn">
-                            <button type="submit">Login</button>
-                        </div>
-                    </form>
+            <div id="redirectContainer">
+            <h2 id="logH2" data-translate="loginTxtTrslt"> Already have an account? Login here </h2>
+            <li><a href="/login" data-link id="loginRedirect"> Login </a></li>
             </div>
-
         `;
+    }
+
+    async onBegin(container) {
+        //Does nothing by default
+        const res = await fetch("/api/register", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                username: user123,
+                password: super_password
+            })
+        });
     }
 }

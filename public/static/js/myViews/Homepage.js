@@ -34,6 +34,8 @@ export default class extends MainView {
         <div class="info-Container"> 
         </div>
 
+        <div id="postedSucess"> </div>
+
         `;
     }
 
@@ -43,6 +45,7 @@ export default class extends MainView {
         let messageDiv = container.querySelector("#messageDiv");
         let smileyFace = container.querySelector("#smileyFace");
         let heart = container.querySelector("#heart");
+        let postedSucess = container.querySelector("#postedSucess");
 
         postBtn.addEventListener("click", async function(evt){
 
@@ -59,6 +62,7 @@ export default class extends MainView {
                 })
             });
 
+            postedSucess.innerText = "You post has been posted! Check View your Posts";
         });
 
         smileyFace.addEventListener("click", async function(evt){
@@ -73,6 +77,4 @@ export default class extends MainView {
 
         });
     }
-
-
 }
