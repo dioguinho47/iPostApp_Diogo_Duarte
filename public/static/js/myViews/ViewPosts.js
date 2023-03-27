@@ -31,6 +31,7 @@ export default class extends MainView {
 }
 
 class SinglePostView {
+    
     constructor(post, container){
 
         container.innerHTML = this.getHtml();
@@ -49,8 +50,7 @@ class SinglePostView {
                 }
             });
 
-            location.reload();
-
+            container.parentElement.removeChild(container);
         });
     }
 

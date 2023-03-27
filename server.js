@@ -118,17 +118,15 @@ server.get('/api/posts/', (req, res) => {
         res.json(response.rows);
       
     });
-
-
 });
 
 //Gets a specific post to present to the user by looking up the 'ID' parameter
-server.get('/api/posts/<id>/', (req, res) => {
+server.get('/api/posts/:id', (req, res) => {
 
 });
 
 //Adds a reaction to a specific post by looking up the 'ID' parameter
-server.put('/api/posts/<id>/react/', (req, res) => {
+server.put('/api/posts/:id/:react/', (req, res) => {
 
 });
 
@@ -140,10 +138,13 @@ server.delete('/api/posts/:id', (req, res) => {
     client.query('DELETE FROM posts WHERE messageid= $1', [id_to_delete], (error, response) => {
 
         if(error !== null){
+
             res.statusCode = 500;
             res.end();
             console.log(error);
+
             return;
+
         }
 
         res.end();
@@ -162,10 +163,78 @@ server.delete('/api/posts/<id>/react/', (req, res) => {
 //Login form
 server.post('/api/login/', (req, res) => {
 
+    let loginUsername = req.body.username;
+    let loginPassword = req.body.password;
+
+    client.query('SELECT * FROM users WHERE username = $1 AND password = $2', [loginUsername, loginPassword], (error, response) => {
+
+        if(error !== null){
+            res.statusCode = 500;
+            res.end();
+            console.log(error);
+
+            return;
+        }
+
+        if(response.rows.length !== 1){
+            res.statusCode = 401;
+            res.end();
+
+            return;
+        }
+
+        res.json({
+
+            id: response.rows[0].userid 
+
+        });
+    });
+
 });
 
 //Registration form
 server.post('/api/register', (req, res) => {
+
+    let registerUsername = req.body.username;
+    let registerCountry = req.body.country;
+    let registerPassword = req.body.password;
+
+    client.query('SELECT * FROM users WHERE username = $1', [registerUsername], (error, response) => {
+
+        if (response.rows.length !== 0){
+            res.statusCode = 400;
+            res.end();
+
+            return;
+        }
+
+        if(error !== null){
+            res.statusCode = 500;
+            res.end();
+            console.log(error);
+
+            return;
+        }
+       
+        client.query('INSERT INTO users (username, country, password) VALUES ($1, $2, $3) RETURNING *',[registerUsername, registerCountry, registerPassword], (error, response) => {
+
+            if(error !== null){
+                res.statusCode = 500;
+                res.end();
+                console.log(error);
+    
+                return;
+            }
+
+            res.json({
+
+                id: response.rows[0].userid
+
+            });
+
+        });
+        
+    });
 
 });
 

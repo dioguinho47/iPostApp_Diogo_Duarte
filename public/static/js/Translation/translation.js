@@ -11,7 +11,8 @@ export default {
         userTrslt: "Username:",
         pwTrslt: "Password:",
         regBtnTrslt: "Register",
-        loginTxtTrslt: "Already have an account? Login here"
+        loginTxtTrslt: "Already have an account? Login here",
+        countryTxtTrslt: "Country:"
     },
     pt: {
         navTitle1: "Partilhar um post",
@@ -25,9 +26,7 @@ export default {
         userTrslt: "Nome de usuário:",
         pwTrslt: "Palavra-passe:",
         regBtnTrslt: "Registrar",
-        loginTxtTrslt: "Já tem uma conta? Faça o login aqui"
-
-
-
+        loginTxtTrslt: "Já tem uma conta? Faça o login aqui",
+        countryTxtTrslt: "País:"
     }
 }

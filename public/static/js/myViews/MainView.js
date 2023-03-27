@@ -1,6 +1,5 @@
 export default class {
     constructor() {
-
     }
 
     setTitle(title) {
@@ -12,9 +11,7 @@ export default class {
     }
     
     async onBegin(container) {
-        //Does nothing by default
     }
     async onEnd(container) {
-        //Does nothing by default
     }
 }

@@ -28,11 +28,11 @@ function translateLang(){
 }
 
 function translatedInterface(){
-    const uiElements = document.querySelectorAll("[data-translate]");
+    const interfaceElements = document.querySelectorAll("[data-translate]");
 
-    for (const element of uiElements) {
-        const translationKey = element.getAttribute("data-translate")
-        element.innerText = myTranslations[translationKey];
+    for (const myElement of interfaceElements) {
+        const translationKey = myElement.getAttribute("data-translate")
+        myElement.innerText = myTranslations[translationKey];
     }
 }
 

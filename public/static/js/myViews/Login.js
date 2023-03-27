@@ -10,7 +10,7 @@ export default class extends MainView {
         return `
             <div class="login-container">
             <h1 id="logH1"> Login </h1>
-                    <form id="LoginForm" action="#" method="post">
+                    <form id="LoginForm" action="/" method="post">
                         <div class="data2">
                             <label for="name" data-translate="userTrslt">Username: </label>
                             <input type="name" name="name" id="name2" />
@@ -20,7 +20,7 @@ export default class extends MainView {
                             <input type="password" name="password" id="password2" />
                         </div>
                         <div class="logBtn">
-                            <button type="submit">Login</button>
+                            <button type="submit" id="myloginBtn">Login</button>
                         </div>
                     </form>
             </div>
@@ -28,17 +28,4 @@ export default class extends MainView {
         `;
     }
 
-    async onBegin(container) {
-        //Does nothing by default
-        const res = await fetch("/api/login", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                username: user123,
-                password: super_password
-            })
-        });
-    }
 }

@@ -16,8 +16,8 @@ export default class extends MainView {
                             <input type="text" name="name" id="name" />
                         </div>
                         <div class="data">
-                            <label for="email">Email: </label>
-                            <input type="email" name="email" id="email" />
+                        <label for="name" data-translate="countryTxtTrslt">Country: </label>
+                        <input type="text" name="country" id="country" />
                         </div>
                         <div class="data">
                             <label for="password" data-translate="pwTrslt">Password: </label>
@@ -35,17 +35,4 @@ export default class extends MainView {
         `;
     }
 
-    async onBegin(container) {
-        //Does nothing by default
-        const res = await fetch("/api/register", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                username: user123,
-                password: super_password
-            })
-        });
-    }
 }
