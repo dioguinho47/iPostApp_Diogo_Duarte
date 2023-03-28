@@ -18,7 +18,7 @@ server.use((req, res, next) => {
     let authHeader = req.headers["authorization"];
     console.log(`Authorization header: ${authHeader}`);
 
-    if (authHeader || authHeader == null || authHeader === "null" || authHeader === "undefined"){
+    if (authHeader === undefined  || authHeader == null || authHeader === "null" || authHeader === "undefined"){
         console.log(`Advancing away`);
         next();
 
