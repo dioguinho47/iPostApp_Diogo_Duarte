@@ -18,5 +18,7 @@ To test the application locally, delete "ssl: {rejectUnauthorized: false}" from 
 "node_modules" from the .gitignore file to allow the folder to be used locally. Once that´s done use
 npm start or node server.js
 
+The app is also hosted on heroku: https://ipostapplication.herokuapp.com/
+
 By: Diogo Duarte
 
