@@ -41,7 +41,6 @@ class SinglePostView {
         this.usernameTxt = container.querySelector("#usernameTxt");
         this.usernameTxt.innerText = post.username;
         this.deleteBtn = container.querySelector("#deleteBtn");
-        this.deleteError = container.querySelector("#deleteError");
 
         this.deleteBtn.addEventListener("click", async () => {
 
@@ -55,7 +54,7 @@ class SinglePostView {
             if (res.ok) {
                 container.parentElement.removeChild(container);
             } else {
-                this.deleteError.innerText = "You can´t delete a post shared by another user!"
+                alert("You can´t delete a post shared by another user!");
             }
 
         });
@@ -85,7 +84,6 @@ class SinglePostView {
                 </div>
             </div>
         </div>
-        <div id="deleteError"> </div>
         `;
     }
 }

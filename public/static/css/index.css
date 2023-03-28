@@ -425,23 +425,14 @@ footer {
 .wrapper2{
     margin: 0 auto;
     margin-top: 100px;
-    margin-bottom: 20px;
+    margin-bottom: 120px;
     background-color: white;
     border-radius: 15px;
-    max-width: 475px;
+    max-width: 100%;
     width: 100%;
     padding: 50px 25px 15px 40px;
     align-items: center;
     align-content: center;
-}
-
-#deleteError{
-    align-items: center;
-    font-size: calc(16px + 6 * ((50vw - 320px) / 680));
-    font-family: 'Roboto', sans-serif;
-    padding-top: 10px;
-    color:rgb(129, 1, 1); 
-    text-align: center;
 }
 
 #usernameTxt{
