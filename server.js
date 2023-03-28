@@ -67,9 +67,7 @@ server.use((req, res, next) => {
         console.log("Tagged request");
 
         next();
-
     }); 
-
 });
 
 //API POST ENDPOINTS

@@ -60,6 +60,7 @@ export default class extends MainView {
                   message: currentPostText
                 })
             });
+            
             if (res.ok) {
                 postedSucess.innerText = "Your post has been posted! Check View your Posts";
             } else {
