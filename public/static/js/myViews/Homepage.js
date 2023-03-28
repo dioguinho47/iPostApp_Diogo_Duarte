@@ -39,7 +39,7 @@ export default class extends MainView {
     }
 
     async onBegin(container) {
-        //Does nothing by default
+
         let postBtn = container.querySelector("#postBtn");
         let messageDiv = container.querySelector("#messageDiv");
         let smileyFace = container.querySelector("#smileyFace");
@@ -68,15 +68,11 @@ export default class extends MainView {
         });
 
         smileyFace.addEventListener("click", async function(evt){
-            
             messageDiv.innerText = "😁";
-
         });
 
         heart.addEventListener("click", async function(evt){
-            
             messageDiv.innerText = "❤️";
-
         });
     }
 }

@@ -31,7 +31,7 @@ export default class extends MainView {
     }
 
     async onBegin(container) {
-
+        
         let loginInputUsername = container.querySelector("#loginInputUsername");
         let loginInputPassword = container.querySelector("#loginInputPassword");
         let submitBtn = container.querySelector("#submitBtn");

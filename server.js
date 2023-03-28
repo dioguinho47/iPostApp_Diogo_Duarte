@@ -31,7 +31,6 @@ server.use((req, res, next) => {
     userID = parseInt(userID);
 
     if (isNaN(userID)){
-
         res.statusCode = 400;
         res.end();
 
@@ -97,16 +96,13 @@ server.post('/api/posts/', (req, res) => {
         console.log(postedmessage);
 
         res.end();
-
     });
-
 });
 
 //Gets multiple posts to present to the user
 server.get('/api/posts/', (req, res) => {
 
     client.query('SELECT posts.messageid, posts.userid, posts.postedmessage, posts.timeposted, users.username FROM posts JOIN users ON posts.userid = users.userid ORDER BY posts.messageid DESC LIMIT 10', (error, response) => {
-
         if(error !== null){
             res.statusCode = 500;
             res.end();
@@ -116,7 +112,6 @@ server.get('/api/posts/', (req, res) => {
         }
 
         res.json(response.rows);
-      
     });
 });
 
@@ -189,7 +184,6 @@ server.post('/api/login/', (req, res) => {
 
         });
     });
-
 });
 
 //Registration form
@@ -231,11 +225,8 @@ server.post('/api/register/', (req, res) => {
                 id: response.rows[0].userid
 
             });
-
         });
-        
     });
-
 });
 
 //Homepage endpoint to our index.html

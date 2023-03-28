@@ -8,7 +8,6 @@ export default class extends MainView {
     }
 
     async onBegin(container) {
-        //Does nothing by default
     
         const res = await fetch("/api/posts", {
             method: "GET",

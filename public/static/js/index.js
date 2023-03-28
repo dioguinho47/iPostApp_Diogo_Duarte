@@ -17,6 +17,7 @@ translateBtn.addEventListener("click", function(evt){
 });
 
 function translateLang(){
+
     if (definedLanguage === "en"){
         definedLanguage = "pt"
     } else {
@@ -28,6 +29,7 @@ function translateLang(){
 }
 
 function translatedInterface(){
+
     const interfaceElements = document.querySelectorAll("[data-translate]");
 
     for (const myElement of interfaceElements) {
@@ -38,6 +40,7 @@ function translatedInterface(){
 
 //Application navigation
 export const applicationNavigation = myUrl => {
+
     history.pushState(null, null, myUrl);
     myRouter();
 }
@@ -46,6 +49,7 @@ let currentView = null;
 
 //Routes for my application
 const myRouter = async function() {
+
     const myRoutes = [
         {path: "/", view: Homepage},
         {path: "/viewposts", view: Posts},
@@ -54,6 +58,7 @@ const myRouter = async function() {
     ];
 
     const routePath = myRoutes.map(route => {
+
         return {
             route: route,
             itsaFind: location.pathname === route.path
@@ -70,6 +75,7 @@ const myRouter = async function() {
 
     //Content for each route will be stored in the 'id = ApplicationContent' div container
     const container = document.querySelector("#ApplicationContent");
+
     if (currentView !== null) {
         await currentView.onEnd(container);
     }
@@ -81,7 +87,9 @@ const myRouter = async function() {
 window.addEventListener("popstate", myRouter);
 
 document.addEventListener("DOMContentLoaded", function() {
+
     document.body.addEventListener("click", function(evt) {
+
         if (evt.target.matches("[data-link]")){
             evt.preventDefault();
             applicationNavigation(evt.target.href);

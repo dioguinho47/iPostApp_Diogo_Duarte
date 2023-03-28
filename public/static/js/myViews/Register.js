@@ -70,7 +70,6 @@ export default class extends MainView {
             } else {
                 registerError.innerText = "Registration failed. The username you typed already exists!"
             }
-
         });
     }
 }
