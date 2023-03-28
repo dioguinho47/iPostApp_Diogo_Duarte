@@ -1,5 +1,6 @@
 import MainView from "./MainView.js";
 import { applicationNavigation } from "../index.js";
+import { make_authorization } from "../authorization.js";
 
 export default class extends MainView {
     constructor(){
@@ -58,13 +59,16 @@ export default class extends MainView {
             });
 
             if (res.ok) {
+                let successRegister = await res.json();
+                let userid = successRegister.id; 
+                let country = regCountryInp.value;
+                let password = regInpPassword.value;
+                make_authorization(userid, country, password);
                 applicationNavigation("/");
+            } else {
+                alert("Error in creating account");
             }
 
         });
-
-      
-
     }
-
 }

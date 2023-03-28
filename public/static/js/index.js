@@ -56,17 +56,17 @@ const myRouter = async function() {
     const routePath = myRoutes.map(route => {
         return {
             route: route,
-            isMatch: location.pathname === route.path
+            itsaFind: location.pathname === route.path
         };
     });
 
-    let Match = routePath.find(potentialMatch => potentialMatch.isMatch);
+    let aFind = routePath.find(potentialFind => potentialFind.itsaFind);
 
-    if (!Match) {
+    if (!aFind) {
        myRoutes(404);
     }
 
-    const myView = new Match.route.view();
+    const myView = new aFind.route.view();
 
     //Content for each route will be stored in the 'id = ApplicationContent' div container
     const container = document.querySelector("#ApplicationContent");

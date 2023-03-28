@@ -1,5 +1,6 @@
 import MainView from "./MainView.js";
 import { applicationNavigation } from "../index.js";
+import { make_authorization } from "../authorization.js";
 
 export default class extends MainView {
     constructor(){
@@ -51,6 +52,10 @@ export default class extends MainView {
             console.log(res); 
 
             if (res.ok) {
+                let successLogin = await res.json();
+                let userid = successLogin.id; 
+                let password = loginInputPassword.value;
+                make_authorization(userid, password);
                 applicationNavigation("/");
             } else {
                 alert("Your username or password are incorrect!");

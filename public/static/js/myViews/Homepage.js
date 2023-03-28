@@ -1,4 +1,5 @@
 import MainView from "./MainView.js";
+import { get_authorization_header } from "../authorization.js";
 
 export default class extends MainView {
     constructor(){
@@ -53,13 +54,17 @@ export default class extends MainView {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
-                  "Authorization": "Bearer 1 super_password"
+                  "Authorization": get_authorization_header()
                 },
                 body: JSON.stringify({
                   message: currentPostText
                 })
             });
-            postedSucess.innerText = "Your post has been posted! Check View your Posts";
+            if (res.ok) {
+                postedSucess.innerText = "Your post has been posted! Check View your Posts";
+            } else {
+                postedSucess.innerText = "You need to have an account and be logged in to be able to share posts!";
+            }
         });
 
         smileyFace.addEventListener("click", async function(evt){

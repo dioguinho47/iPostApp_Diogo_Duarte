@@ -1,4 +1,5 @@
 import MainView from "./MainView.js";
+import { get_authorization_header } from "../authorization.js";
 
 export default class extends MainView {
     constructor(){
@@ -12,7 +13,7 @@ export default class extends MainView {
         const res = await fetch("/api/posts", {
             method: "GET",
             headers: {
-              "Authorization": "Bearer 1 super_password"
+                "Authorization": get_authorization_header()
             }
         });
 
@@ -37,8 +38,8 @@ class SinglePostView {
         container.innerHTML = this.getHtml();
         this.postedMessage = container.querySelector("#postedMessage");
         this.postedMessage.innerText = post.postedmessage;
-        this.useridTxt = container.querySelector("#useridTxt");
-        this.useridTxt.innerText = "USER ID:" + " " + post.userid;
+        this.usernameTxt = container.querySelector("#usernameTxt");
+        this.usernameTxt.innerText = post.username;
         this.deleteBtn = container.querySelector("#deleteBtn");
 
         this.deleteBtn.addEventListener("click", async () => {
@@ -46,7 +47,7 @@ class SinglePostView {
             const res = await fetch("/api/posts/" + post.messageid, {
                 method: "DELETE",
                 headers: {
-                  "Authorization": "Bearer 1 super_password"
+                  "Authorization": get_authorization_header()
                 }
             });
 
@@ -59,7 +60,7 @@ class SinglePostView {
         <div class="wrapper2">
             <div class="post-box">
                 <div class="post-area">
-                    <h3 id="useridTxt"></h3>
+                    <h3 id="usernameTxt"></h3>
                     <h1 id="postedMessage"></h1>
                 </div>
                 <div class="privacy">

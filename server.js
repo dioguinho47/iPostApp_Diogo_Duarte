@@ -105,7 +105,7 @@ server.post('/api/posts/', (req, res) => {
 //Gets multiple posts to present to the user
 server.get('/api/posts/', (req, res) => {
 
-    client.query('SELECT * FROM posts ORDER BY messageid DESC LIMIT 10', (error, response) => {
+    client.query('SELECT posts.messageid, posts.userid, posts.postedmessage, posts.timeposted, users.username FROM posts JOIN users ON posts.userid = users.userid ORDER BY posts.messageid DESC LIMIT 10', (error, response) => {
 
         if(error !== null){
             res.statusCode = 500;
