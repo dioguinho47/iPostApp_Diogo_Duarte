@@ -425,7 +425,7 @@ footer {
 .wrapper2{
     margin: 0 auto;
     margin-top: 100px;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
     background-color: white;
     border-radius: 15px;
     max-width: 475px;
@@ -435,9 +435,18 @@ footer {
     align-content: center;
 }
 
+#deleteError{
+    align-items: center;
+    font-size: calc(16px + 6 * ((50vw - 320px) / 680));
+    font-family: 'Roboto', sans-serif;
+    padding-top: 10px;
+    color:rgb(129, 1, 1); 
+    text-align: center;
+}
+
 #usernameTxt{
     font-family: 'Roboto', sans-serif;
-    font-size: 15px;
+    font-size: 25px;
     color: rgba(9, 47, 217, 0.724);
     text-align: center;
     padding-right: 30px;
@@ -552,19 +561,28 @@ footer {
     text-align: center;
 }
 
+#registerError{
+    align-items: center;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    color:rgb(129, 1, 1); 
+    padding-top: 20px;
+    text-align: center;
+}
+
 #regH1 {
     padding-bottom: 20px;
-    font-size: 50px;
+    font-size: calc(16px + 6 * ((200vw - 320px) / 680));
     color:rgb(129, 1, 1); 
 }
 
 .data {
     padding-bottom: 10px;
-    font-size: 25px;
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
 }
 
 .data input {
-    font-size: 20px;
+    font-size: calc(16px + 6 * ((50vw - 320px) / 680));
     border-radius: 30px;
     outline: none;
     padding-left: 10px;
@@ -575,7 +593,7 @@ footer {
     padding: 7px;
     border-radius: 30px;
     outline: 0;
-    font-size: 20px;
+    font-size: calc(16px + 6 * ((70vw - 320px) / 680));
     margin-top: 10px;
     margin-bottom: 30px;
     cursor: pointer;
@@ -591,33 +609,41 @@ footer {
 
 #redirectContainer{
     text-align: center;
-    font-size: 20px;
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
 }
 
 /* Login View */
 
 .login-container {
     padding-top: 200px;
-    padding-bottom: 80px;
+    padding-bottom: 20px;
     align-content: center;
     align-items: center;
     text-align: center;
 }
 
+#loginError{
+    align-items: center;
+    font-size: calc(16px + 6 * ((90vw - 320px) / 680));
+    font-family: 'Roboto', sans-serif;
+    color:rgb(129, 1, 1); 
+    text-align: center;
+}
+
 #logH1 {
     padding-bottom: 20px;
-    font-size: 50px;
+    font-size: calc(16px + 6 * ((200vw - 320px) / 680));
     color:rgb(129, 1, 1); 
 }
 
 #logH2 {
     padding-bottom: 20px;
-    font-size: 30px;
+    font-size: calc(16px + 6 * ((120vw - 320px) / 680));
     color:rgb(129, 1, 1); 
 }
 
 .redirectContainer{
-    font-size: 30px;
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
     list-style-type: none;
     text-align: center;
 }
@@ -630,11 +656,11 @@ footer {
 
 .data2 {
     padding-bottom: 10px;
-    font-size: 25px;
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
 }
 
 .data2 input {
-    font-size: 20px;
+    font-size: calc(16px + 6 * ((50vw - 320px) / 680));
     border-radius: 30px;
     outline: none;
     padding-left: 10px;
@@ -645,7 +671,7 @@ footer {
     padding: 7px;
     border-radius: 30px;
     outline: 0;
-    font-size: 20px;
+    font-size: calc(16px + 6 * ((70vw - 320px) / 680));
     margin-top: 10px;
     margin-bottom: 30px;
     cursor: pointer;

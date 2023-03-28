@@ -34,6 +34,7 @@ export default class extends MainView {
             <h2 id="logH2" data-translate="loginTxtTrslt"> Already have an account? Login here </h2>
             <li><a href="/login" data-link id="loginRedirect"> Login </a></li>
             </div>
+            <div id="registerError"> </div>
         `;
     }
 
@@ -43,6 +44,7 @@ export default class extends MainView {
         let regInpPassword = container.querySelector("#regInpPassword");
         let regInpUsername = container.querySelector("#regInpUsername");
         let regCountryInp = container.querySelector("#regCountryInp");
+        let registerError = container.querySelector("#registerError");
 
         regBtn.addEventListener("click", async function (evt) {
 
@@ -66,7 +68,7 @@ export default class extends MainView {
                 make_authorization(userid, password);
                 applicationNavigation("/");
             } else {
-                alert("Error in creating account");
+                registerError.innerText = "Registration failed. The username you typed already exists!"
             }
 
         });

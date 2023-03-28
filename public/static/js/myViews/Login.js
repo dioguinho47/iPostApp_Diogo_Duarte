@@ -26,7 +26,7 @@ export default class extends MainView {
                         </div>
                     </div>
             </div>
-
+            <div id="loginError"> </div>
         `;
     }
 
@@ -35,6 +35,7 @@ export default class extends MainView {
         let loginInputUsername = container.querySelector("#loginInputUsername");
         let loginInputPassword = container.querySelector("#loginInputPassword");
         let submitBtn = container.querySelector("#submitBtn");
+        let loginError = container.querySelector("#loginError");
 
         submitBtn.addEventListener("click", async function() {
 
@@ -58,7 +59,7 @@ export default class extends MainView {
                 make_authorization(userid, password);
                 applicationNavigation("/");
             } else {
-                alert("Your username or password are incorrect!");
+                loginError.innerText = "The username or password are incorrect!"
             }
         });
     }
