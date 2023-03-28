@@ -63,7 +63,7 @@ export default class extends MainView {
                 let userid = successRegister.id; 
                 let country = regCountryInp.value;
                 let password = regInpPassword.value;
-                make_authorization(userid, country, password);
+                make_authorization(userid, password);
                 applicationNavigation("/");
             } else {
                 alert("Error in creating account");

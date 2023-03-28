@@ -135,7 +135,7 @@ server.delete('/api/posts/:id', (req, res) => {
 
     const id_to_delete = req.params.id;
 
-    client.query('DELETE FROM posts WHERE messageid= $1', [id_to_delete], (error, response) => {
+    client.query('DELETE FROM posts WHERE messageid= $1 AND userid = $2', [id_to_delete, res.locals.user.userid], (error, response) => {
 
         if(error !== null){
 

@@ -51,7 +51,12 @@ class SinglePostView {
                 }
             });
 
-            container.parentElement.removeChild(container);
+            if (res.ok) {
+                container.parentElement.removeChild(container);
+            } else {
+                alert("You can´t delete someones post");
+            }
+
         });
     }
 
