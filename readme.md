@@ -15,7 +15,7 @@ npm start or node server.js
 Note:
 
 To test the application locally, delete "ssl: {rejectUnauthorized: false}" from database.js, and remove
-"node_modules" from the .gitignore file to allow the folder to be used locally. Once that´s done use
+"node_modules" from the .gitignore file to allow the folder to be used locally ('npm install' to get the folder back). Once that´s done use
 npm start or node server.js
 
 The app is also hosted on heroku: https://ipostapplication.herokuapp.com/
