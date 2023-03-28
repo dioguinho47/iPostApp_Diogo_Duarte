@@ -37,7 +37,7 @@ function translatedInterface(){
 }
 
 //Application navigation
-const applicationNavigation = myUrl => {
+export const applicationNavigation = myUrl => {
     history.pushState(null, null, myUrl);
     myRouter();
 }

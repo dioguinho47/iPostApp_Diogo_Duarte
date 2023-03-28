@@ -193,7 +193,7 @@ server.post('/api/login/', (req, res) => {
 });
 
 //Registration form
-server.post('/api/register', (req, res) => {
+server.post('/api/register/', (req, res) => {
 
     let registerUsername = req.body.username;
     let registerCountry = req.body.country;
